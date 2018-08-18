@@ -1,1 +1,5 @@
-# NodeJS_Angular_MongoDB_RestFul_Project
+# Node JS Express
+# Angular JS
+# MongoDB
+  # - RESTful service
+  
