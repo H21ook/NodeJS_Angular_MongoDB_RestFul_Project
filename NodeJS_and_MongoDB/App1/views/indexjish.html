@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="text" id="na" name='updateData[name]'/>
+        <input type="text" id="pri" name='updateData[price]'/>
+        <input type="file" id="img" name='updateData[productImage]'/>
+        <input type="submit" onclick="submitform()" text="SEND"/>
+    </form>
+    <script>
+        function submitform(){
+            alert("Sending Json");
+            var xhr = new XMLHttpRequest();
+            var name = document.getElementById("na").value;
+            var price = document.getElementById("pri").value;
+            var image = document.getElementById("img");
+            var d = {
+                'updateData[name]': name,
+                'updateData[price]': price,
+                'updateData[productImage]': image
+            }
+            xhr.onload = function () { }
+            
+            xhr.open("POST", d , true);
+            xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+            xhr.send();
+            console.log(image);
+            
+        }
+        // xhr = new XMLHttpRequest();
+        // xhr.onload = function () {
+        //     console.log(xhr.responseText);
+        // }
+        // xhr.
+        // xhr.send();
+
+    </script>
+</body>
+</html>
